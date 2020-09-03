@@ -1,0 +1,58 @@
+# Installing KenLM
+
+First, install KenLM dependencies:
+
+    sudo apt-get install libz-dev
+    export EIGEN3_ROOT=$HOME/eigen-eigen-07105f7124f9
+    cd $HOME; wget -O - https://bitbucket.org/eigen/eigen/get/3.2.8.tar.bz2 | tar xj
+    sudo apt-get install liblzma-dev
+
+Then install KenLM by cloning its Github repository and building it:
+
+    git clone https://github.com/kpu/kenlm.git
+    mkdir -p build
+    cd build
+    cmake ..
+    make -j 4
+
+Then add the directory to the $PATH environment variable:
+
+    export PATH=$PATH:/home/julian/Aiducate/Github/kenlm/build/bin
+
+It may also be necessary to install Boost 1.55:
+
+    wget -O boost_1_55_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.gz/download
+    tar xzvf boost_1_55_0.tar.gz
+    cd boost_1_55_0/
+
+    sudo apt-get update
+    sudo apt-get install build-essential g++ python-dev autotools-dev libicu-dev build-essential libbz2-dev libboost-all-dev
+
+    ./bootstrap.sh --prefix=/usr/local
+
+    n=`cat /proc/cpuinfo | grep "cpu cores" | uniq | awk '{print $NF}'`
+
+    sudo ./b2 --with=all -j $n install 
+
+    sudo sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/local.conf'
+    sudo ldconfig
+    
+Note: A quick guide for using KenLM can be found at:
+
+    http://victor.chahuneau.fr/notes/2012/07/03/kenlm.html
+
+First, install Boost:
+
+    sudo apt-get install libboost-all-dev
+
+Then install zlib:
+
+    
+    
+Then run:
+
+
+    git clone https://github.com/vchahun/kenlm.git
+    cd kenlm
+    ./bjam # compile LM estimation code
+    python setup.py install # install Python module

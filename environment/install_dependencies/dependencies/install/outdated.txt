@@ -1,0 +1,10 @@
+# Installing NLTK Dependencies
+
+    import nltk
+    nltk.download("conll2000")
+    nltk.download('averaged_perceptron_tagger')
+
+# Installing Spacy v1.9.0 (OUTDATED, See install/spacy.sh)
+
+    sudo pip --no-cache-dir install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-1.2.1/en_core_web_md-1.2.1.tar.gz
+    sudo python -m spacy link /usr/local/lib/python2.7/dist-packages/en_core_web_md/en_core_web_md-1.2.1 en --force
