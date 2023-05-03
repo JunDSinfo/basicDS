@@ -1,0 +1,20 @@
+{
+   "input": {
+      "Brand": [
+         "Heinz"
+      ],
+      "Product": [
+         "Baked Beans"
+      ],
+      "Weight": [
+         "400g can"
+      ],
+      "Pack Size": [
+         "8"
+      ],
+      "Features": [
+         "Easy Open Tin"
+      ]
+   },
+   "output": "Campbell's Condensed Tomato Soup, 10.75 Ounce can, 4 pack (Packaging may vary)"
+}
